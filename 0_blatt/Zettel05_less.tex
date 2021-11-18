@@ -1,0 +1,52 @@
+%======================== PAGE STYLE / LAYOUT ====================%
+
+\documentclass[a4paper,oneside,11pt]{scrartcl}
+\usepackage{../packages/my_mathdefs}
+\usepackage{../packages/my_header}
+\usepackage{pdfpages}
+\usepackage[
+ 	typ=ab,
+ 	fach=Mathematik,
+ 	lerngruppe=9,
+ 	loesungen=seite,
+ 	module={Symbole,Bewertung,Papiertypen},
+ 	]{schule}
+
+
+\title{Arbeitsblatt 1 - Kreisgedöns} % Muss gesetzt werden
+\author{Nikolai Less}
+
+\usetikzlibrary{decorations.pathreplacing}
+
+\newcommand{\Hintergrund}[4][0.5cm]{
+    \begin{tikzpicture}
+        \pgfmathtruncatemacro{\anzahl}{(\linewidth-\pgflinewidth)/#1}
+        \draw[gray,step=#1] (0,0) rectangle (\anzahl*#1,#2*#3) (0,0) grid (\anzahl*#1,#2*#3);
+        #4
+    \end{tikzpicture}
+}
+\newcommand{\schiefeEbene}[4]{
+    \draw[black, very thick] (#1,#2) -- (#3,#2);
+    \draw[black, very thick] (#3,#4) -- (#3,#2);
+    \draw[black, very thick] (#3,#4) -- (#1,#2);
+}
+
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{uuuuuu}{rgb}{0.26,0.26,0.26}
+
+
+% ===================== Header_Footer ==============================%
+
+
+%====================================================================%
+    
+%======================= BEGIN DOCUMENT =============================%
+\begin{document}
+%\feldKar[0.5cm]{5}
+
+\Hintergrund{0.5cm}{0.85cm}{
+	\draw [line width=1.5pt] (5,5) circle (2cm);
+}
+
+\end{document}
+%===================================== END DOCUMENT ====================================%
